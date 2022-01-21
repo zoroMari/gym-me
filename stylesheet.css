@@ -823,8 +823,9 @@ h2 {
 .FAQ {
   height: auto;
   min-height: 1160px;
-  position: relative;
   padding-top: 80px;
+  background: var(--color-white) url("img/faq_background.png") no-repeat center;
+  background-size: contain;
 }
 
 .FAQ-Title {
@@ -840,18 +841,7 @@ h2 {
   margin: 0;
 }
 
-.FAQBackground {
-  position: absolute;
-  height: 1160px;
-  width: auto;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -2;
-}
-
 .FAQ .Questions {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -913,15 +903,13 @@ h2 {
 
 @media screen and (max-width: 1024px) {
   .FAQ {
-    height: auto;
     min-height: 935px;
-    width: 620px;
     margin-bottom: 150px;
     /* padding-top: 80px; */
   }
-  
-  .FAQBackground {
-    height: 935px;
+
+  .FAQ .Questions {
+    width: 620px;;
   }
 }
 
@@ -929,7 +917,7 @@ h2 {
   .FAQ {
     background: var(--color-white);
     width: 100%;
-    height: auto;
+    min-height: 600px;
     margin-bottom: 160px;
   }
 
@@ -944,6 +932,7 @@ h2 {
   
   .FAQ .Questions {
     margin-top: 50px;
+    width: auto;
   }
 }
 /* FAQ end */
