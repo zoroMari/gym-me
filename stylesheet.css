@@ -413,6 +413,14 @@ h2 {
 
 
 /* TRAINING PROGRAMS start*/
+.TrainingPrograms {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .TrainingPrograms-Title {
   width: 540px;
   margin: 0px auto;
@@ -421,9 +429,11 @@ h2 {
 .Programs {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 350px;
   margin: 80px 0px;
+  width: auto;
 }
 
 .Program {
@@ -450,17 +460,14 @@ h2 {
   height: 350px;
 }
 
-.Programs .Program:first-child {
-  margin-left: -160px;
-}
-
-.Programs .Program:last-child {
-  margin-right: -160px;
+.Programs .Program:not(:last-child) {
+  margin-right: var(--spacing_medium);
 }
 
 .Programs-Arrows {
   justify-content: flex-end;
   margin-right: 64px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -476,6 +483,20 @@ h2 {
 
   .Programs {
     margin: 50px 0px;
+    height: 240px;
+  }
+
+  .Programs .Program:nth-child(2n+1) {
+    height: 240px;
+  }
+  
+  .Programs .Program:not(:last-child) {
+    margin-right: var(--spacing_small);
+  }
+
+  .Program {
+    height: 220px;
+    width: 220px;
   }
 
   .Programs-Arrows {
