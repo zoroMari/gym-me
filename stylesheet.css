@@ -756,7 +756,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: auto;  
-    /* overflow-x: hidden; */
   }
 
   .Community-Desktop {
