@@ -892,6 +892,7 @@ h2 {
   width: 100%;
   font: var(--font-h6);
   font-weight: 900;
+  cursor: pointer;
 }
 
 .FAQ .QuestionWithAnswer:not(:first-child) {
