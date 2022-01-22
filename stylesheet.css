@@ -413,6 +413,14 @@ h2 {
 
 
 /* TRAINING PROGRAMS start*/
+.TrainingPrograms {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .TrainingPrograms-Title {
   width: 540px;
   margin: 0px auto;
@@ -421,9 +429,11 @@ h2 {
 .Programs {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 350px;
   margin: 80px 0px;
+  width: auto;
 }
 
 .Program {
@@ -450,17 +460,14 @@ h2 {
   height: 350px;
 }
 
-.Programs .Program:first-child {
-  margin-left: -160px;
-}
-
-.Programs .Program:last-child {
-  margin-right: -160px;
+.Programs .Program:not(:last-child) {
+  margin-right: var(--spacing_medium);
 }
 
 .Programs-Arrows {
   justify-content: flex-end;
   margin-right: 64px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -476,6 +483,20 @@ h2 {
 
   .Programs {
     margin: 50px 0px;
+    height: 240px;
+  }
+
+  .Programs .Program:nth-child(2n+1) {
+    height: 240px;
+  }
+  
+  .Programs .Program:not(:last-child) {
+    margin-right: var(--spacing_small);
+  }
+
+  .Program {
+    height: 220px;
+    width: 220px;
   }
 
   .Programs-Arrows {
@@ -686,6 +707,7 @@ h2 {
   flex-direction: row;
   margin-left: var(--spacing_medium);
   margin-right: 0;
+  overflow-x: hidden;
 }
 
 .Community-TitleAndArrow {
@@ -754,7 +776,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
+    width: auto;  
   }
 
   .Community-Desktop {
@@ -763,6 +785,7 @@ h2 {
 
   .Community-Mobile {
     display: flex;
+    overflow-x: hidden;
   }
 
   .Сomment {
@@ -787,12 +810,8 @@ h2 {
 
 @media screen and (max-width: 800px) {
   .Community {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-left: 0;
     margin-right: 0;
-    width: auto;
   }
 
   .Community-Desktop {
@@ -805,6 +824,8 @@ h2 {
 
   .Сomment {
     margin: 50px 0px;
+    height: 400px;
+    width: 300px;
   }
 
   .Community-Arrows {
@@ -823,8 +844,9 @@ h2 {
 .FAQ {
   height: auto;
   min-height: 1160px;
-  position: relative;
   padding-top: 80px;
+  background: var(--color-white) url("img/faq_background.png") no-repeat center;
+  background-size: contain;
 }
 
 .FAQ-Title {
@@ -840,18 +862,7 @@ h2 {
   margin: 0;
 }
 
-.FAQBackground {
-  position: absolute;
-  height: 1160px;
-  width: auto;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -2;
-}
-
 .FAQ .Questions {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -913,15 +924,13 @@ h2 {
 
 @media screen and (max-width: 1024px) {
   .FAQ {
-    height: auto;
     min-height: 935px;
-    width: 620px;
     margin-bottom: 150px;
     /* padding-top: 80px; */
   }
-  
-  .FAQBackground {
-    height: 935px;
+
+  .FAQ .Questions {
+    width: 620px;;
   }
 }
 
@@ -929,7 +938,7 @@ h2 {
   .FAQ {
     background: var(--color-white);
     width: 100%;
-    height: auto;
+    min-height: 600px;
     margin-bottom: 160px;
   }
 
@@ -944,6 +953,7 @@ h2 {
   
   .FAQ .Questions {
     margin-top: 50px;
+    width: auto;
   }
 }
 /* FAQ end */
