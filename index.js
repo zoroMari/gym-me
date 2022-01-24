@@ -37,3 +37,24 @@ function goUpButton() {
 }
 
 goUpButton();
+
+function burgerMenu() {
+  const burgerOpen = document.querySelector('.Header .BurgerMenu');
+  const burgerClose = document.querySelector('.HeaderMobile .BurgerMenu')
+  const headerMobile = document.querySelector('.HeaderMobile');
+
+
+  function handleOpenMenu() {
+    headerMobile.style.display = 'block';
+  }
+
+  function handleCloseMenu() {
+    headerMobile.style.display = '';
+  }
+
+  burgerOpen.addEventListener('click', handleOpenMenu);
+  burgerClose.addEventListener('click', handleCloseMenu);
+
+}
+
+burgerMenu();

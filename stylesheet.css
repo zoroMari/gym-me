@@ -247,20 +247,21 @@ h2 {
   align-items: center;
 }
 
-.BurgerMenu {
+.Header .BurgerMenu {
   display: none;
+  cursor: pointer;
 }
 
-.Header-Menu ul{
+.Header .Header-Menu ul{
   display: flex;
   flex-direction: row;
 }
 
-.Header-Menu li {
+.Header .Header-Menu li {
   margin-right: var(--spacing_medium);
 }
 
-.Header-Menu li:last-of-type {
+.Header .Header-Menu li:last-of-type {
   margin-right: 0px;
 }
 
@@ -270,11 +271,71 @@ h2 {
   align-items: center;
 }
 
-.Button_logIn {
+.Header .Button_logIn {
   margin-right: var(--spacing_small);
   border: transparent;
   color: var(--color-white);
   padding: 12px 8px;
+}
+
+.HeaderMobile {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 320px;
+  height: 100%;
+  background-color: var(--color-black);
+  z-index: 20;
+  display: none;
+}
+
+.HeaderMobile-Content {
+  width: 100%;
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Burger-Header {
+  height: 42px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: var(--spacing_medium);
+}
+
+.HeaderMobile .FontMenu {
+  font: var(--font-h5);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing_medium);
+}
+
+.HeaderMobile .FontMenu:last-child {
+  margin-bottom: 48px;
+}
+
+.HeaderMobile ul {
+  padding-left: 0;
+}
+
+.HeaderMobile .Buttons {
+  flex-direction: column;
+  width: 100%;
+}
+
+.HeaderMobile .Button {
+  width: 100%;
+}
+
+.HeaderMobile .Button_logIn {
+  color: var(--color-white);
+  border-color: var(--color-white);
+  margin-bottom: var(--spacing_small);
 }
 
 @media screen and (max-width: 1024px) {
@@ -282,20 +343,45 @@ h2 {
     padding: 20px 30px;
   }
 
-  .BurgerMenu {
+  .Header .BurgerMenu {
     display: block;
   }
 
-  .Header-Menu {
+  .Header .Header-Menu {
     display: none;
   }
 
-  .Header-Buttons {
+  .Header .Header-Buttons {
     display: none;
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  .HeaderMobile {
+    width: 100%;
+  }
+  
+  .HeaderMobile-Content {
+    height: 100%;
+    padding: 0px 30px 64px 30px;
+    align-items: center;
+  }
+
+  .HeaderMobile .FontMenu {
+    font: var(--font-h3);
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .HeaderMobile .FontMenu:last-child {
+    margin-bottom: 48px;
   }
 
 }
 /* HEADER end*/
+
+
 
 
 /* FIRSTSCREEN start*/
