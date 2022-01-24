@@ -194,6 +194,13 @@ a, h1, h2, h3, h4, h5, h6, p {
     font-weight: 900;
   }
 }
+
+#goUp {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+}
 /* COMON end */
 
 
