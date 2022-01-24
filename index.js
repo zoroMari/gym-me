@@ -33,7 +33,6 @@ function goUpButton() {
 
   window.addEventListener('scroll', handleShowButton);
   goUpButton.addEventListener('click', handleGoToTop);
-  
 }
 
 goUpButton();
@@ -43,7 +42,6 @@ function burgerMenu() {
   const burgerClose = document.querySelector('.HeaderMobile .BurgerMenu')
   const headerMobile = document.querySelector('.HeaderMobile');
   const menus = document.querySelector('.HeaderMobile ul');
-
 
   function handleOpenMenu() {
     headerMobile.style.display = 'block';
@@ -57,8 +55,9 @@ function burgerMenu() {
     const oneMenu = event.target.closest('li'); 
 
     if (!oneMenu) return;
+    if (document.documentElement.clientWidth > 800) return;
 
-    headerMobile.style.display = '';
+    headerMobile.style.display = 'none';
     
   }
 
