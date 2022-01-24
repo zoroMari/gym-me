@@ -685,7 +685,7 @@ h2 {
   .Tarif {
     flex-direction: row;
     justify-content: center;
-    padding: 40px 0px;
+    padding: 40px 16px;
     width: 100%;
   }
 
@@ -893,6 +893,10 @@ h2 {
   font: var(--font-h6);
   font-weight: 900;
   cursor: pointer;
+}
+
+.FAQ .Question-Text {
+  margin-right: 8px;
 }
 
 .FAQ .QuestionWithAnswer:not(:first-child) {
