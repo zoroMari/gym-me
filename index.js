@@ -42,6 +42,7 @@ function burgerMenu() {
   const burgerOpen = document.querySelector('.Header .BurgerMenu');
   const burgerClose = document.querySelector('.HeaderMobile .BurgerMenu')
   const headerMobile = document.querySelector('.HeaderMobile');
+  const menus = document.querySelector('.HeaderMobile ul');
 
 
   function handleOpenMenu() {
@@ -52,9 +53,18 @@ function burgerMenu() {
     headerMobile.style.display = '';
   }
 
+  function handleAutoCloseMenu(event) {
+    const oneMenu = event.target.closest('li'); 
+
+    if (!oneMenu) return;
+
+    headerMobile.style.display = '';
+    
+  }
+
   burgerOpen.addEventListener('click', handleOpenMenu);
   burgerClose.addEventListener('click', handleCloseMenu);
-
+  menus.addEventListener('click', handleAutoCloseMenu);
 }
 
 burgerMenu();
