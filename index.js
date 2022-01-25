@@ -40,30 +40,29 @@ goUpButton();
 function burgerMenu() {
   const burgerOpen = document.querySelector('.Header .BurgerMenu');
   const burgerClose = document.querySelector('.HeaderMobile .BurgerMenu')
-  const headerMobile = document.querySelector('.HeaderMobile');
-  const menus = document.querySelector('.HeaderMobile ul');
+  const menuMobile = document.querySelector('.HeaderMobile');
+  const menuElements = document.querySelector('.HeaderMobile ul');
 
   function handleOpenMenu() {
-    headerMobile.style.display = 'block';
+    menuMobile.style.display = 'block';
   }
 
   function handleCloseMenu() {
-    headerMobile.style.display = '';
+    menuMobile.style.display = '';
   }
 
   function handleAutoCloseMenu(event) {
-    const oneMenu = event.target.closest('li'); 
+    const menuElem = event.target.closest('li'); 
 
-    if (!oneMenu) return;
+    if (!menuElem) return;
     if (document.documentElement.clientWidth > 800) return;
 
-    headerMobile.style.display = 'none';
-    
+    menuMobile.style.display = 'none';
   }
 
   burgerOpen.addEventListener('click', handleOpenMenu);
   burgerClose.addEventListener('click', handleCloseMenu);
-  menus.addEventListener('click', handleAutoCloseMenu);
+  menuElements.addEventListener('click', handleAutoCloseMenu);
 }
 
 burgerMenu();
