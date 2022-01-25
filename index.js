@@ -66,3 +66,14 @@ function burgerMenu() {
 }
 
 burgerMenu();
+
+
+// function closeArrowCommunity() {
+//   const arrowCommuity = document.querySelector('.Community-Desktop .Community-Arrows');
+
+//   if (document.documentElement.clientWidth > 1600) {
+//     arrowCommuity.style.display = 'none';
+//   }
+// }
+
+// closeArrowCommunity();
