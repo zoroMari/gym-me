@@ -837,10 +837,18 @@ h2 {
 }
 
 .Сomments {
+  display: block;
+  overflow: hidden;
+}
+
+.Comments-Wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: auto;
+  justify-content: flex-start;
+  width: 1600px;
+  margin-left: 0px;
+  position: relative;
+  transition: margin-left 250ms;
 }
 
 .Сomment {

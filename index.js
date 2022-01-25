@@ -68,12 +68,37 @@ function burgerMenu() {
 burgerMenu();
 
 
-// function closeArrowCommunity() {
-//   const arrowCommuity = document.querySelector('.Community-Desktop .Community-Arrows');
+function carouselComments() {
+  const width = 180; // ширина картинки
+  const count = 1; // видимое количество изображений
+  const comments = document.querySelector('.Community .Comments-Wrapper');
+  const comment = document.querySelectorAll('.Community .Сomment');
+  const arrowNext = document.querySelector('.Community-Arrows .Arrow_next');
+  const arrowPrev = document.querySelector('.Community-Arrows .Arrow_previous');
 
-//   if (document.documentElement.clientWidth > 1600) {
-//     arrowCommuity.style.display = 'none';
-//   }
-// }
+  let position = 0; // положение ленты прокрутки
 
-// closeArrowCommunity();
+  arrowPrev.onclick = function() {
+    position += width * count;
+    position = Math.min(position, 0)
+    comments.style.marginLeft = position + 'px';    
+
+    if (position === 0) {
+      arrowPrev.querySelector('path').style.fill = '';
+    } 
+  };
+
+  arrowNext.onclick = function() {
+    position -= width * count;
+    positionMax = -width * (5 - count);
+    position = Math.max(position, positionMax);
+    comments.style.marginLeft = position + 'px';
+    arrowPrev.querySelector('path').style.fill = '#131316';
+    
+    if (position === positionMax) {
+      arrowNext.querySelector('path').style.fill = 'var(--color-grey_light)';
+    } 
+  }; 
+}
+
+carouselComments();
