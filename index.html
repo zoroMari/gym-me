@@ -17,17 +17,41 @@
   </head>
 
   <body>
+    <header class="HeaderMobile">
+      <div class="HeaderMobile-Content">
+        <div class="Burger Burger-Header">
+          <img class="Header-Logo" alt="Logo" src="img/logo.png">
+          <img class="BurgerMenu" alt="BurgerMenu" src="img/icons/closeMenu.svg">
+        </div>
+       
+        <nav class="Header-Menu">
+          <ul>
+            <li class="FontMenu"><a href="#Home">Home</a></li>
+            <li class="FontMenu"><a href="#About">About</a></li>
+            <li class="FontMenu"><a href="#Workouts">Workouts</a></li>
+            <li class="FontMenu"><a href="#Pricing">Pricing</a></li>
+            <li class="FontMenu"><a href="#Community-Mobile">Community</a></li>
+            <li class="FontMenu"><a href="#FAQ">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="Header-Buttons Buttons">
+          <button class="Button Button_small Button_outline Button_logIn">Log in</button>
+          <button class="Button Button_small Button_primary Button_signUp">Sign up</button>
+        </div>
+      </div>
+    </header>
+
     <header class="Header">
         <img class="Header-Logo" alt="Logo" src="img/logo.png">
         <img class="BurgerMenu" alt="BurgerMenu" src="img/icons/menuButton.svg">
         <nav class="Header-Menu">
           <ul>
-            <li class="FontMenu">Home</li>
-            <li class="FontMenu">About</li>
-            <li class="FontMenu">Workouts</li>
-            <li class="FontMenu">Pricing</li>
-            <li class="FontMenu">Community</li>
-            <li class="FontMenu">FAQ</li>
+            <li class="FontMenu"><a href="#Home">Home</a></li>
+            <li class="FontMenu"><a href="#About">About</a></li>
+            <li class="FontMenu"><a href="#Workouts">Workouts</a></li>
+            <li class="FontMenu"><a href="#Pricing">Pricing</a></li>
+            <li class="FontMenu"><a href="#Community-Desktop">Community</a></li>
+            <li class="FontMenu"><a href="#FAQ">FAQ</a></li>
           </ul>
         </nav>
         <div class="Header-Buttons Buttons">
@@ -36,8 +60,10 @@
         </div>
     </header>
 
+ 
+
     <main>
-      <section class="Wrapper FirstScreen">
+      <section class="Wrapper FirstScreen" id="Home">
         <div class="FirstScreen-Wrapper">
           <img class="FirstScreen-Img" alt="Hero" src="img/heroImage.png">
           <section class="FirstScreen-Info">
@@ -51,7 +77,7 @@
       </section> 
 
 
-      <article class="Wrapper OurMission">
+      <article class="Wrapper OurMission" id="About">
         <div class="Title OurMission-Title">
           <img class="Title-Icon" alt="Icon_mission" src="img/icons/ourMission.svg">
           <div class="Title-Text">
@@ -76,7 +102,7 @@
       </article>
       
 
-      <article class="Wrapper TrainingPrograms"> 
+      <article class="Wrapper TrainingPrograms" id="Workouts"> 
         <div class="Title TrainingPrograms-Title">
           <img class="Title-Icon" alt="Icon_mission" src="img/icons/calendarTrainingProgram.svg">
           <div class="Title-Text">
@@ -150,7 +176,7 @@
       </article>
 
 
-      <article class="Wrapper PricingPlan">
+      <article class="Wrapper PricingPlan" id="Pricing">
         <div class="Title PricingPlan-Title">
           <img class="Title-Icon" alt="Icon_pricing" src="img/icons/pricing.svg">
           <div class="Title-Text">
@@ -280,7 +306,7 @@
       </article>
 
 
-      <article class="Wrapper Community Community-Desktop">
+      <article class="Wrapper Community Community-Desktop" id="Community-Desktop">
         <div class="Community-TitleAndArrow">
           <div class="Title Community-Title">
             <img class="Title-Icon" alt="Icon_pricing" src="img/icons/community.svg">
@@ -347,7 +373,7 @@
       </article>
 
 
-      <article class="Wrapper Community Community-Mobile">
+      <article class="Wrapper Community Community-Mobile" id="Community-Mobile">
         
         <div class="Title Community-Title">
           <img class="Title-Icon" alt="Icon_pricing" src="img/icons/community.svg">
@@ -413,7 +439,7 @@
       </article>
 
 
-      <article class="Wrapper FAQ">
+      <article class="Wrapper FAQ" id="FAQ">
 
         <div class="Title FAQ-Title">
           <img class="Title-Icon" alt="FAQ" src="img/icons/faq_title.svg">
@@ -612,6 +638,19 @@
       <p class="Footer-Rights">All rights reserved. Gymme 2021.</p>
     </footer>
 
+    <div id="goUp">
+      <svg class="Arrow" width="60" height="60" viewBox="0 0 60 60" fill="none" 
+      xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 29.5C2 44.6875 14.3125 57 29.5 57C44.6875 
+        57 57 44.6875 57 29.5C57 14.3125 44.6875 2 29.5 2C14.3125 2 2 14.3125 2 29.5ZM21.2675 
+        35.0175C20.796 35.4729 20.1645 35.7249 19.509 35.7192C18.8535 35.7135 18.2265 35.4506 17.763 
+        34.987C17.2994 34.5235 17.0365 33.8965 17.0308 33.241C17.0251 32.5855 17.2771 31.954 17.7325 
+        31.4825L27.7325 21.4825C28.2013 21.0138 28.8371 20.7505 29.5 20.7505C30.1629 20.7505 30.7987 
+        21.0138 31.2675 21.4825L41.2675 31.4825C41.7229 31.954 41.9749 32.5855 41.9692 33.241C41.9635 
+        33.8965 41.7006 34.5235 41.237 34.987C40.7735 35.4506 40.1465 35.7135 39.491 35.7192C38.8355 
+        35.7249 38.204 35.4729 37.7325 35.0175L29.5 26.785L21.2675 35.0175Z" fill="#25C870"/>
+      </svg>
+    </div>
     <script src="index.js"></script>
   </body>
 
