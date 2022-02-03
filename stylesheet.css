@@ -845,7 +845,7 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 1600px;
+  width: 1568px;
   margin-left: 0px;
   position: relative;
   transition: margin-left 250ms;
@@ -953,6 +953,10 @@ h2 {
     margin: 50px 0px;
     height: 400px;
     width: 300px;
+  }
+
+  .Comments-Wrapper {
+    width: 1328px;
   }
 
   .Community-Arrows {

@@ -69,59 +69,69 @@ burgerMenu();
 
 
 function carouselComments() {
-  const comments = document.querySelector('.Community .Сomments');
-  const commentsWrapper = document.querySelector('.Community .Comments-Wrapper');
-  const comment = document.querySelectorAll('.Community .Сomment');
-  const arrowNext = document.querySelector('.Community-Arrows .Arrow_next');
-  const arrowPrev = document.querySelector('.Community-Arrows .Arrow_previous');
-  const width = 360 / 2; // ширина картинки
-  const count = 4 * 2;
-  const margins = count / 2 * 32;
-  const widthOfComments = width * count + margins; // видимое количество изображений
+  const commentsDesk = document.querySelector('.Community .Сomments');
+  const commentsWrapperDesk = document.querySelector('.Community-Desktop .Comments-Wrapper');
+  const commentsWrapperMob = document.querySelector('.Community-Mobile .Comments-Wrapper');
+  const comment = document.querySelector('.Community .Сomment');
+  const arrowNextDesk = document.querySelector('.Community-Desktop .Arrow_next');
+  const arrowPrevDesk = document.querySelector('.Community-Desktop .Arrow_previous');
+  const arrowNextMob = document.querySelector('.Community-Mobile .Arrow_next');
+  const arrowPrevMob = document.querySelector('.Community-Mobile .Arrow_previous');
+  let width = (document.documentElement.clientWidth > 800) ? 360 : 300;
+  const count = 4;
+  const margin = 32;
+  const widthOfComments = count * (width + margin); // видимое количество изображений
 
   let position = 0; 
   let positionMax;
   let positionMin;// положение ленты прокрутки
 
-  arrowPrev.onclick = function() {
-    if (document.documentElement.clientWidth > 1024) {
-      position += width;
-      position = Math.min(position, 0)
-      commentsWrapper.style.marginLeft = position + 'px';   
-      arrowNext.querySelector('path').style.fill = '#131316';
-      if (position === 0) {
-        arrowPrev.querySelector('path').style.fill = '';
-      } 
 
-    } else {
-      position += width * 2;
-      positionMin = (widthOfComments - document.documentElement.clientWidth);
-      position = Math.min(position, positionMin)
-      commentsWrapper.style.marginLeft = position + 'px';   
-      arrowNext.querySelector('path').style.fill = '#131316';
-      if (position === positionMin) {
-        arrowPrev.querySelector('path').style.fill = 'var(--color-grey_light)';
-      } 
-    }
+  arrowPrevDesk.onclick = function() { 
+    position += width + margin;
+    position = Math.min(position, 0)
+    commentsWrapperDesk.style.marginLeft = position + 'px';   
+    arrowNextDesk.querySelector('path').style.fill = '#131316';
+    if (position === 0) {
+      arrowPrevDesk.querySelector('path').style.fill = '';
+    } 
+  };
+  
+
+  arrowPrevMob.onclick = function() {
+    position += width;
+    positionMin = (widthOfComments - document.documentElement.clientWidth);
+    position = Math.min(position, positionMin)
+    commentsWrapperMob.style.marginLeft = position + 'px';   
+    arrowNextMob.querySelector('path').style.fill = '#131316';
+    if (position === positionMin) {
+      arrowPrevMob.querySelector('path').style.fill = 'var(--color-grey_light)';
+    } 
   };
 
-  arrowNext.onclick = function() {
-    if (document.documentElement.clientWidth > 1024) {
-      position -= width;
-      positionMax = (comments.clientWidth - widthOfComments);
-      position = Math.max(position, positionMax);
-      commentsWrapper.style.marginLeft = position + 'px';
-      arrowPrev.querySelector('path').style.fill = '#131316';
-    } else {
-      position -= width * 2;
-      positionMax = -(widthOfComments - document.documentElement.clientWidth);
-      position = Math.max(position, positionMax);
-      commentsWrapper.style.marginLeft = position + 'px';
-      arrowPrev.querySelector('path').style.fill = '#131316';
+
+  arrowNextDesk.onclick = function() {
+    position -= width + margin;
+    positionMax = (commentsDesk.clientWidth - widthOfComments);
+    position = Math.max(position, positionMax);
+    commentsWrapperDesk.style.marginLeft = position + 'px';
+    arrowPrevDesk.querySelector('path').style.fill = '#131316';
+
+    if (position === positionMax) {
+      arrowNextDesk.querySelector('path').style.fill = 'var(--color-grey_light)';
     }
+  }; 
+
+
+  arrowNextMob.onclick = function() {
+    position -= width;
+    positionMax = -(widthOfComments - document.documentElement.clientWidth);
+    position = Math.max(position, positionMax);
+    commentsWrapperMob.style.marginLeft = position + 'px';
+    arrowPrevMob.querySelector('path').style.fill = '#131316';
   
     if (position === positionMax) {
-      arrowNext.querySelector('path').style.fill = 'var(--color-grey_light)';
+      arrowNextMob.querySelector('path').style.fill = 'var(--color-grey_light)';
     }
   }; 
 }
