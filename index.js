@@ -69,35 +69,50 @@ burgerMenu();
 
 
 function carouselComments() {
-  const width = 180; // ширина картинки
-  const count = 1; // видимое количество изображений
-  const comments = document.querySelector('.Community .Comments-Wrapper');
+  const comments = document.querySelector('.Community .Сomments');
+  const commentsWrapper = document.querySelector('.Community .Comments-Wrapper');
   const comment = document.querySelectorAll('.Community .Сomment');
   const arrowNext = document.querySelector('.Community-Arrows .Arrow_next');
   const arrowPrev = document.querySelector('.Community-Arrows .Arrow_previous');
+  const width = 360 / 2; // ширина картинки
+  const count = 4 * 2;
+  const margins = count / 2 * 32; // видимое количество изображений
 
   let position = 0; // положение ленты прокрутки
 
   arrowPrev.onclick = function() {
-    position += width * count;
+    position += width;
     position = Math.min(position, 0)
-    comments.style.marginLeft = position + 'px';    
+    commentsWrapper.style.marginLeft = position + 'px';   
+    arrowNext.querySelector('path').style.fill = '#131316';
+ 
 
     if (position === 0) {
       arrowPrev.querySelector('path').style.fill = '';
     } 
+
+    console.log('count >>>', count);
+    console.log('position >>>', position);
   };
 
   arrowNext.onclick = function() {
-    position -= width * count;
-    positionMax = -width * (5 - count);
+    position -= width;
+    positionMax = (comments.clientWidth - (width * count + margins));
     position = Math.max(position, positionMax);
-    comments.style.marginLeft = position + 'px';
+    commentsWrapper.style.marginLeft = position + 'px';
     arrowPrev.querySelector('path').style.fill = '#131316';
     
     if (position === positionMax) {
       arrowNext.querySelector('path').style.fill = 'var(--color-grey_light)';
-    } 
+    }
+
+    console.log('count >>>', count);
+    console.log('position >>>', position);
+    console.log('comments.clientWidth >>>', comments.clientWidth);
+    console.log('width * count >>>', width * count);
+    console.log('positionMax >>>', positionMax);
+
+
   }; 
 }
 
