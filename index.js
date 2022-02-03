@@ -76,43 +76,53 @@ function carouselComments() {
   const arrowPrev = document.querySelector('.Community-Arrows .Arrow_previous');
   const width = 360 / 2; // ширина картинки
   const count = 4 * 2;
-  const margins = count / 2 * 32; // видимое количество изображений
+  const margins = count / 2 * 32;
+  const widthOfComments = width * count + margins; // видимое количество изображений
 
-  let position = 0; // положение ленты прокрутки
+  let position = 0; 
+  let positionMax;
+  let positionMin;// положение ленты прокрутки
 
   arrowPrev.onclick = function() {
-    position += width;
-    position = Math.min(position, 0)
-    commentsWrapper.style.marginLeft = position + 'px';   
-    arrowNext.querySelector('path').style.fill = '#131316';
- 
+    if (document.documentElement.clientWidth > 1024) {
+      position += width;
+      position = Math.min(position, 0)
+      commentsWrapper.style.marginLeft = position + 'px';   
+      arrowNext.querySelector('path').style.fill = '#131316';
+      if (position === 0) {
+        arrowPrev.querySelector('path').style.fill = '';
+      } 
 
-    if (position === 0) {
-      arrowPrev.querySelector('path').style.fill = '';
-    } 
-
-    console.log('count >>>', count);
-    console.log('position >>>', position);
+    } else {
+      position += width * 2;
+      positionMin = (widthOfComments - document.documentElement.clientWidth);
+      position = Math.min(position, positionMin)
+      commentsWrapper.style.marginLeft = position + 'px';   
+      arrowNext.querySelector('path').style.fill = '#131316';
+      if (position === positionMin) {
+        arrowPrev.querySelector('path').style.fill = 'var(--color-grey_light)';
+      } 
+    }
   };
 
   arrowNext.onclick = function() {
-    position -= width;
-    positionMax = (comments.clientWidth - (width * count + margins));
-    position = Math.max(position, positionMax);
-    commentsWrapper.style.marginLeft = position + 'px';
-    arrowPrev.querySelector('path').style.fill = '#131316';
-    
+    if (document.documentElement.clientWidth > 1024) {
+      position -= width;
+      positionMax = (comments.clientWidth - widthOfComments);
+      position = Math.max(position, positionMax);
+      commentsWrapper.style.marginLeft = position + 'px';
+      arrowPrev.querySelector('path').style.fill = '#131316';
+    } else {
+      position -= width * 2;
+      positionMax = -(widthOfComments - document.documentElement.clientWidth);
+      position = Math.max(position, positionMax);
+      commentsWrapper.style.marginLeft = position + 'px';
+      arrowPrev.querySelector('path').style.fill = '#131316';
+    }
+  
     if (position === positionMax) {
       arrowNext.querySelector('path').style.fill = 'var(--color-grey_light)';
     }
-
-    console.log('count >>>', count);
-    console.log('position >>>', position);
-    console.log('comments.clientWidth >>>', comments.clientWidth);
-    console.log('width * count >>>', width * count);
-    console.log('positionMax >>>', positionMax);
-
-
   }; 
 }
 

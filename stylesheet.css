@@ -911,6 +911,10 @@ h2 {
     overflow-x: hidden;
   }
 
+  .Comments {
+    width: 100%;
+  }
+
   .Сomment {
     margin: 80px 0px;
   }
