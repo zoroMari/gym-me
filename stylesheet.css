@@ -816,7 +816,7 @@ h2 {
 .Community-Desktop {
   display: flex;
   flex-direction: row;
-  margin-left: var(--spacing_medium);
+  padding-left: var(--spacing_medium);
   margin-right: 0;
   overflow-x: hidden;
 }
